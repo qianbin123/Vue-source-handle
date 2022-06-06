@@ -1,3 +1,10 @@
-export let a = 111;
+import { initMixin } from './init'
 
-export default {a: 1}
+// 将所有的方法都耦合在一起
+function Vue(options){
+  this._init(options)
+}
+
+initMixin(Vue);// 扩展init方法
+
+export default Vue;
